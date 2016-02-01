@@ -1,0 +1,151 @@
+
+     <div id="page_content">
+        <div id="page_content_inner">
+            <div class="uk-grid" data-uk-grid-margin data-uk-grid-match id="user_profile">
+                <div class="uk-width-large-7-10">
+                    <div class="md-card">
+                        <div class="user_heading">
+                            <div class="user_heading_menu" data-uk-dropdown="{pos:'bottom-right'}">
+                                <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
+<!--                                 <div class="uk-dropdown uk-dropdown-small">
+                                    <ul class="uk-nav">
+                                        <li><a href="#">Action 1</a></li>
+                                        <li><a href="#">Action 2</a></li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                            <div class="user_heading_avatar">
+                                <img ng-src="{{user_data.logoUrl}}" alt="user avatar"/>
+                            </div>
+                            <div class="user_heading_content">
+                                <h2 class="heading_b uk-margin-bottom">
+                                    <span class="uk-text-truncate">{{user_data.fullName}}</span>
+                                    <span class="sub-heading">{{user_data.placeOfLiving}}</span>
+                                </h2>
+                                <ul class="user_stats">
+                                    <li>
+                                        <h4 class="heading_a">{{user_data_photos.length}}<span class="sub-heading" translate="Profile.Profile_View.Photos"></span></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_a">{{user_data_albums.length}}<span class="sub-heading" translate="Profile.Profile_View.Albums"></span></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_a">{{user_data_friends}}<span class="sub-heading" translate="Profile.Profile_View.Friends"></span></h4>
+                                    </li>
+                                    <li>
+                                        <h4 class="heading_a">{{user_data.startDateTime.toString()}}<span class="sub-heading" translate="Profile.Profile_View.Signup_Date"></span></h4>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="md-fab md-fab-small md-fab-accent" ui-sref="restricted.pages.user_edit">
+                                <i class="material-icons">&#xE150;</i>
+                            </a>
+                        </div>
+                        <div class="user_content">
+                            <ul id="user_profile_tabs" class="uk-tab" data-uk-tab="{connect:'#user_profile_tabs_content', animation:'slide-horizontal'}" data-uk-sticky="{ top: 48, media: 960 }">
+                                <li class="uk-active"><a href="#"><p translate="Profile.Profile_View.About.About"></p></a></li>
+                                <li><a href="#"><p translate="Profile.Profile_View.Photos"></p></a></li>
+                                <li><a href="#"><p translate="Profile.Profile_View.Albums"></p></a></li>
+                            </ul>
+                            <ul id="user_profile_tabs_content" class="uk-switcher uk-margin">
+                                <li>
+                                    {{user_data.about}}
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom" translate="Profile.Profile_View.About.Contact_info"></h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.email}}</span>
+                                                        <span class="uk-text-small uk-text-muted" translate="Profile.Profile_View.About.Email"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user_data.phoneNumber}}</span>
+                                                        <span class="uk-text-small uk-text-muted" translate="Profile.Profile_View.About.Phone"></span>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </li>
+                                <li>
+                                    <div id="user_profile_gallery" data-uk-check-display class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4" data-uk-grid="{gutter: 4}">
+                                        <div ng-repeat="photo in user_data_photos">
+                                            <a href="{{photo.url}}" data-uk-lightbox="{group:'user_images'}">
+                                                <img ng-src="{{photo.url}}" alt=""/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- <ul class="uk-pagination uk-margin-large-top">
+                                        <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                                        <li class="uk-active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><span>&hellip;</span></li>
+                                        <li><a href="#">20</a></li>
+                                        <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                                    </ul> -->
+                                </li>
+                                <li>
+                                    <ul class="md-list">
+                                        <li ng-repeat="album in user_data_albums">
+                                            <div class="md-list-content">
+<!--                                                 <span class="md-list-heading"><a href="#">{{album.name}}</a></span>
+ -->                                                
+                                                    <span class="md-list-heading"><a>{{album.name}}</a></span>
+                                                <div class="uk-margin-small-top">
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE192;</i> <span class="uk-text-muted uk-text-small">{{album.dateTime.toString()}}</span>
+                                                    </span>
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE0B9;</i> <span class="uk-text-muted uk-text-small">{{album.tip}}</span>
+                                                    </span>
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE417;</i> <span class="uk-text-muted uk-text-small">100</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-large-3-10">
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <h3 class="heading_c uk-margin-bottom" translate="Profile.Profile_View.Friends">Friends""</h3>
+                            <ul class="md-list md-list-addon uk-margin-bottom">
+                                <li ng-repeat="friend in user_data.friends">
+                                    <div class="md-list-addon-element">
+                                        <img class="md-user-image md-list-addon-avatar" ng-src="{{friend.avatar}}" alt=""/>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">{{friend.name}}</span>
+                                        <span class="uk-text-small uk-text-muted">{{friend.status}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a class="md-btn md-btn-flat md-btn-flat-primary" href="#">Show all</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,33 @@
+<?php
+
+//var_dump($_FILES);
+
+$response = "";
+$i = 0;
+
+
+$filepath_array = array();
+
+while ((isset($_FILES['files']['name'][$i])) && ($_FILES['files']['name'][$i]<>"")){
+    $error = $_FILES['files']['error'][$i];
+
+    if ($error == 0){
+
+        $upfilename = $_FILES['files']['name'][$i];
+        //should probably validate your filename here
+            //$upfilename = validate_fname($upfilename)
+
+        $tmpname = $_FILES['files']['tmp_name'][$i];
+        $dirname = "./uploadFiles"; // your files to be stored in this directory
+        if (move_uploaded_file($tmpname, "." . $dirname."/".$upfilename))
+		{
+            $response .= "<br><div class=\"message\">File : $upfilename : uploaded successfully. Thank you.</div><br>";
+        }else {
+            $response .= "<br> <div class=\"message\"> There was an error uploading file: $upfilename ";
+        }
+        array_push($filepath_array, $dirname."/".$upfilename);
+    }
+    else $response = "<br><div class=\"errormsg\">there was an error - error code: $error</div><br>";
+    $i++;
+}
+echo json_encode($filepath_array);

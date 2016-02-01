@@ -1,0 +1,73 @@
+
+
+<div id="page_content">
+    <div id="page_content_inner">
+
+        <div class="md-card">
+            <div class="md-card-content">
+                <div class="uk-overflow-container uk-margin-bottom">
+                    <table class="uk-table uk-table-align-vertical uk-table-nowrap tablesorter tablesorter-altair" id="ts_pager_filter">
+                        <thead>
+                        <tr>
+                            <th class="filter-false remove sorter-false">Image</th>
+                            <th>Name</th>
+                            <th class="filter-false remove sorter-false">On/Off</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>On/Off</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr ng-repeat="item in table_data" on-last-repeat>
+                                <td><img class="md-user-image" ng-src="{{item.logoUrl}}" alt=""/></td>
+                                <td>{{item.name}}</td>
+                                <td>
+<!--                                 <input type="checkbox" class="ts_checkbox" data-md-icheck icheck ng-model="row_select">
+ -->
+                                   <!--  <input type="checkbox" ui-switch ng-model="switches.switch_f" color="#1e88e5" checked id="switch_demo_primary" />
+                                    <label for="switch_demo_primary" class="inline-label">Label</label> -->
+                                    <span class="icheck-inline">
+                                        <input type="radio" name="{{item.id}}" id="invoice_due_date_7" icheck ng-model="item.radio" value="On" ng-change="prohibitionClick(item)"/>
+                                        <label for="invoice_due_date_7" class="inline-label">On</label>
+                                    </span>
+                                    <span class="icheck-inline">
+                                        <input type="radio" name="{{item.id}}" id="invoice_due_date_14" icheck ng-model="item.radio" value="Off"  ng-change="prohibitionClick(item)"/>
+                                        <label for="invoice_due_date_14" class="inline-label">Off</label>
+                                    </span>
+
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ts_pager">
+                    <ul class="uk-pagination ts_pager">
+                        <li data-uk-tooltip title="Select Page">
+                            <select class="ts_gotoPage ts_selectize"></select>
+                        </li>
+                        <li class="first"><a href="javascript:void(0)"><i class="uk-icon-angle-double-left"></i></a></li>
+                        <li class="prev"><a href="javascript:void(0)"><i class="uk-icon-angle-left"></i></a></li>
+                        <li><span class="pagedisplay"></span></li>
+                        <li class="next"><a href="javascript:void(0)"><i class="uk-icon-angle-right"></i></a></li>
+                        <li class="last"><a href="javascript:void(0)"><i class="uk-icon-angle-double-right"></i></a></li>
+                        <li data-uk-tooltip title="Page Size">
+                            <select class="pagesize ts_selectize">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

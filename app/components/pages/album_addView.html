@@ -1,0 +1,192 @@
+
+<div class="md-card md-card-single main-print" id="invoice" single-card>
+    <form action="" class="uk-form-stacked">
+        <div class="md-card-toolbar">
+            <div class="md-card-toolbar-actions">
+                <i class="md-icon material-icons" id="invoice_submit">&#xE161;</i>
+            </div>
+            <input name="invoice_number" id="invoice_number" class="md-card-toolbar-input" type="text" value="" placeholder="Album" ng-model="tempAlbum.name"/>
+        </div>
+        <div class="md-card-content large-padding">
+            <!-- select event -->
+           <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-medium-1-2">
+                    <label class="uk-form-label uk-margin-bottom" translate="Album.New_Album.Select_Event"></label>
+                    <input type="text" config="selectize_a_config" options="selectize_a_data.options" ng-model="selectize_a" name="selectize_a" selectize />
+
+                   <label class="uk-form-label uk-margin-bottom" translate="Album.New_Album.Select_Category"></label>
+                    <span class="icheck-inline">
+                        <input type="radio" name="invoice_due_date" id="invoice_due_date_7" icheck ng-model="tempAlbum.category" value="Audio" />
+                        <label for="invoice_due_date_7" class="inline-label" translate="Album.New_Album.Audio"></label>
+                    </span>
+                    <span class="icheck-inline">
+                        <input type="radio" name="invoice_due_date" id="invoice_due_date_14" icheck ng-model="tempAlbum.category" value="Image" />
+                        <label for="invoice_due_date_14" class="inline-label" translate="Album.New_Album.Image"></label>
+                    </span>
+                    <span class="icheck-inline">
+                        <input type="radio" name="invoice_due_date" id="invoice_due_date_21" icheck ng-model="tempAlbum.category" value="Video" />
+                        <label for="invoice_due_date_21" class="inline-label" translate="Album.New_Album.Video"></label>
+                    </span>                    
+                </div>
+                <!-- logo -->
+                <div class="uk-width-medium-1-2">
+                        <div class="md-card-toolbar">
+                            <div class="md-card-toolbar-actions">
+
+                            <a href="#mailbox_new_image" data-uk-modal="{center:true}">
+                                <i class="md-icon material-icons" href="#mailbox_new_image">&#xE146;</i>
+                            </a>
+                            </div>
+                            <h3 class="md-card-toolbar-heading-text" translate="Album.New_Album.Logo"></h3>
+                        </div>
+                            <div class="uk-margin-bottom uk-text-center">
+                                <img ng-src="{{tempAlbum.logoUrl}}" alt="" class="img_small" />
+                            </div>
+                </div>
+            </div>  
+            <hr class="md-hr ng-scope">
+            <!-- image list selected -->
+           <div class="gallery_grid uk-grid-width-medium-1-2 uk-grid-width-large-1-4" data-uk-grid="{gutter: 16}">
+                <div ng-repeat="albumPhoto in albumPhotos" on-last-repeat>
+                    <div class="md-card md-card-hover">
+
+                         <div class="gallery_grid_item">
+                            <a href="{{albumPhoto.url}}" data-uk-lightbox="{group:'gallery'}">
+                                <img ng-src="{{albumPhoto.url}}" alt="">
+                            </a>
+                            <div class="gallery_grid_image_caption">
+                                <div class="gallery_grid_image_menu" data-uk-dropdown="{pos:'top-right'}">
+                                    <i class="md-icon material-icons">&#xE5D4;</i>
+                                    <div class="uk-dropdown uk-dropdown-small">
+                                        <ul class="uk-nav">
+                                            <li>
+                                             <a href="#edit_image_information" data-uk-modal="{center:true}" ng-click="setCurPhoto(albumPhoto)"><i class="material-icons uk-margin-small-right"  href="#edit_image_information">&#xE150;</i> <p translate="Album.New_Album.Edit"></p></a>
+
+                                            </li>
+                                            <li><a ng-click="removePhoto(albumPhoto)"><i class="material-icons uk-margin-small-right">&#xE872;</i><p translate="Album.New_Album.Remove"></p></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                  <span class="gallery_image_title uk-text-truncate">{{albumPhoto.title}}</span>
+                                <span class="uk-text-muted uk-text-small uk-text-truncate">{{albumPhoto.description}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid" data-uk-grid-margin>
+            </div>
+            <hr class="md-hr ng-scope">
+            <!-- Choose your current images below or you can upload a new image -->
+            <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-medium-1-2">
+                    <label class="uk-form-label uk-margin-bottom" translate="Album.New_Album.Choose_Image"></label>
+                </div>
+                <div class="uk-width-medium-1-2">
+                    <a href="#multi_upload_new_image" data-uk-modal="{center:true}">
+                        <i class="md-icon material-icons" href="#multi_upload_new_image">&#xE146;</i>
+                    </a>
+                </div>
+            </div>              
+            <!-- image library -->
+            <div>
+                <div id="user_profile_gallery" data-uk-check-display class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4" data-uk-grid="{gutter: 4}">
+                    <div ng-repeat="photo in photos">
+                        <img ng-src="{{photo.url}}" ng-click="addPhotoToAlbum(photo)" alt=""/>
+                    </div>
+                </div>
+<!--                 <ul class="uk-pagination uk-margin-large-top">
+                    <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                    <li class="uk-active"><span>1</span></li>
+                    <li><a >2</a></li>
+                    <li><a >3</a></li>
+                    <li><a >4</a></li>
+                    <li><span>&hellip;</span></li>
+                    <li><a >20</a></li>
+                    <li><a ><i class="uk-icon-angle-double-right"></i></a></li>
+                </ul>
+ -->        
+            </div>
+            <hr class="md-hr ng-scope">
+             <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-1-1">
+                    <div id="form_invoice_services">
+                        <div class="uk-width-medium-9-10">
+                            <div class="uk-grid" data-uk-grid-margin>
+                                <div class="uk-width-medium-1-1">
+                                    <label for="inv_service_description_{{service.id}}" translate="Album.New_Album.Tip"></label>
+                                    <textarea class="md-input" id="inv_service_description_{{service.id}}" md-input ng-model="tempAlbum.tip" cols="30" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-text-center uk-margin-medium-top uk-margin-bottom">
+                        <a class="md-btn md-btn-flat md-btn-flat-primary" ng-click="addAlbum()" translate="Album.New_Album.Add_New"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- file upload -->
+<div class="uk-modal" id="mailbox_new_image">
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close uk-close" type="button"></button>
+        <form>
+            <div class="uk-modal-header">
+                <h3 class="uk-modal-title" translate="Album.New_Album.File_Upload_Dlg.File_Upload"></h3>
+            </div>
+            <div id="mail_upload-drop" class="uk-file-upload">
+                <p class="uk-text" translate="Album.New_Album.File_Upload_Dlg.Drop_File"></p>
+                <p class="uk-text-muted uk-text-small uk-margin-small-bottom" translate="Album.New_Album.File_Upload_Dlg.Or"></p>
+                <span class="uk-form-file md-btn"><p  translate="Album.New_Album.File_Upload_Dlg.Choose_File"></p><input id="mail_upload-select" type="file" ng-model="message_compose.attachments"></span>
+            </div>
+            <div id="mail_progressbar" class="uk-progress uk-hidden">
+                <div class="uk-progress-bar" style="width:0">0%</div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- multi file upload -->
+<div class="uk-modal" id="multi_upload_new_image">
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close uk-close" type="button"></button>
+        <form>
+            <div class="uk-modal-header">
+                <h3 class="uk-modal-title" translate="Album.New_Album.File_Upload_Dlg.File_Upload"></h3>
+            </div>
+            <div id="multi_upload-drop" class="uk-file-upload">
+                <p class="uk-text" translate="Album.New_Album.File_Upload_Dlg.Drop_File"></p>
+                <p class="uk-text-muted uk-text-small uk-margin-small-bottom" translate="Album.New_Album.File_Upload_Dlg.Or"></p>
+                <span class="uk-form-file md-btn"><p translate="Album.New_Album.File_Upload_Dlg.Choose_File"></p><input id="multi_upload-select" type="file" ng-model="message_compose.attachments" multiple></span>
+            </div>
+            <div id="multi_upload_progressbar" class="uk-progress uk-hidden">
+                <div class="uk-progress-bar" style="width:0">0%</div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- edit image information -->
+<div class="uk-modal" id="edit_image_information">
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close uk-close" type="button"></button>
+
+        <div class="md-input-wrapper">
+            <label translate="Album.New_Album.Edit_Dlg.Title"></label>
+            <input type="text" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="title">
+            <span class="md-input-bar"></span>
+        </div>
+
+
+        <form class="md-card-list-item-reply">
+            <label for="mailbox_reply_{{$index}}" translate="Album.New_Album.Edit_Dlg.Description"></label>
+             <textarea class="md-input md-input-full" id="mailbox_reply_{{$index}}" cols="30" rows="4" md-input ng-model="description"></textarea>
+
+            <button class="md-btn md-btn-flat md-btn-flat-primary uk-modal-close" ng-click="edit()" translate="Album.New_Album.Edit_Dlg.Save"></button>
+        </form>
+
+    </div>
+</div>

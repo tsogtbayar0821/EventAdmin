@@ -1,0 +1,290 @@
+{
+    "Signup" : {
+        "Create_an_account" : "Ein Konto erstellen",
+        "Username" : "Benutzername",
+        "Password" : "Passwort",
+        "Repeat_Password" : "Passwort wiederholen",
+        "Email" : "E-mail",
+        "Sign_up" : "Anmeldung"
+    },
+    "Login": {
+        "Username": "Benutzername",
+        "Password": "Passwort",
+        "Sign_In": "Anmelden",
+        "Stay_signed_in": "Bleiben unterzeichnet",
+        "Need_help": "Brauche Hilfe?",
+        "Create_an_acount": "Ein Konto erstellen"
+    },
+    "ERP": {
+		"ERP": "ERP",
+		"List": [
+			"Besucher (letzte 7 Tage)",
+			"Verkauf",
+			"Besucher(Online)"
+		],
+        "Visitors_Chart": "Besucher Diagramm",
+		"Month": [
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"Jum",
+			"Jul",
+			"Aug",
+			"Sep",
+			"Oct",
+			"Nov",
+			"Dec"
+		],
+		"Visitors_Chart_Content" : {
+			"Date": "Datum",
+			"Best_Saler": "Besten saler",
+			"Total_Sale": "Gesamt verkaufen",
+			"Change": "Veränderung"
+		},
+        "Sale_Chart": "Verkauf Diagramm",
+		"Month_1": [
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"Jum",
+			"Jul",
+			"Aug",
+			"Sep",
+			"Oct",
+			"Nov",
+			"Dec"
+		],
+		"Sale_Chart_Content":{
+			"Date": "Datum",
+			"Best_Saler": "Besten saler",
+			"Total_Sale": "Gesamt verkaufen",
+			"Change": "Veränderung"
+		}		
+    },
+   "Event": {
+        "Event": "Ereignis",
+        "All_events": {
+            "All_events": "Alle Veranstaltungen",
+            "Eurolife_at_iPad": "Eurolife_at_iPad",
+            "Downloads": "Downloads"
+        },
+        "New_Event": {
+			"Event": "Ereignis",
+			"Title": "Titel",
+			"Place": "Ort",
+			"Date_Time": "Datum & Zeit",
+			"Tip": "Spitze",
+			"Information": "Informationen",
+			"Drop_file_to_upload": "Drop-Datei zum Hochladen",
+			"or": "oder",
+			"Choose_File": "Datei wählen",
+			"Add_New": "neue hinzufügen"
+		},
+       "Edit_Event": {
+			"Event": "Ereignis",
+			"Title": "Titel",
+			"Place": "Ort",
+			"Date_Time": "Datum & Zeit",
+			"Tip": "Spitze",
+			"Information": "Informationen",
+			"Drop_file_to_upload": "Drop-Datei zum Hochladen",
+			"or": "oder",
+			"Choose_File": "Datei wählen",
+			"Save": "sparen"
+		}
+    },
+    "Album" : {
+        "Album" : "Album",
+		"New_Album":
+		{
+			"Albums": "Alben",
+			"Click_the": "Klicken Sie auf die ",
+			"button_to": "Schaltfläche, um ein neues Album zu erstellen",
+			"or": "oder",
+			"open_album": "Open-Album aus der Liste",
+			"Album": "Album",
+			"Select_Event": "Veranstaltung auswählen:",
+			"Logo": "Logo:",
+			"Select_Category": "Kategorie wählen:",
+			"Audio": "Audio",
+			"Image": "Image",
+			"Video": "Video",
+			"Choose_Image": "Wählen Sie Ihre aktuelle Bild weiter unten, oder Sie können ein neues Bild hochladen",
+			"File_Upload_Dlg":{
+				"File_Upload": "Datei-Upload",
+				"Drop_File": "Drop-Datei zum Hochladen",
+				"Or": "oder",
+				"Choose_File": "Datei wählen"
+			},
+			"Edit": "Bearbeiten",
+			"Remove": "Entfernen",
+			"Edit_Dlg":{
+				"Title": "Titel",
+				"Description": "Beschreibung",
+				"Save": "Sparen"
+			},
+			"Tip": "Spitze",
+			"Add_New": "Neue hinzufügen"
+		},
+		"Edit_Album":
+		{
+			"Albums": "Alben",
+			"Click_the_button": "Klicken Sie auf die Plus-Schaltfläche, um ein neues Album oder Open-Album aus der Liste zu erstellen",
+			"Album": "Album:",
+			"Select_Event": "Veranstaltung auswählen:",
+			"Logo": "Logo:",
+			"Select_Category": "Kategorie wählen:",
+			"Audio": "Audio",
+			"Image": "Image",
+			"Video": "Video",
+			"Choose_Image": "Wählen Sie Ihre aktuelle Bild weiter unten, oder Sie können ein neues Bild hochladens",
+			"File_Upload_Dlg":{
+				"File_Upload": "Datei-Upload",
+				"Drop_File": "Drop-Datei zum Hochladen",
+				"Or": "oder",
+				"Choose_File": "Datei wählen"
+			},
+			"Edit": "Bearbeiten",
+			"Remove": "Entfernen",
+			"Edit_Dlg":{
+				"Title": "Titel",
+				"Description": "Beschreibung",
+				"Save": "Sparen"
+			},
+			"Tip": "Spitze",
+			"Add_New": "Neue hinzufügen"
+		}
+    },
+    "Profile": {
+		"Profile_View": {
+			"Photos": "Fotos",
+			"Albums": "Alben",
+			"Friends": "Freunde",
+			"Signup_Date": "Registrieren Datum",
+			"About": 
+			{
+				"About": "Etwa",
+				"Contact_info": "Kontaktinformation",
+				"Email": "Email",
+				"Phone": "Telefon"
+			}
+		},
+        "Profile_Edit": {
+            "About": {
+				"About_Title": "Etwa",
+				"General_Info": "Allgemeine Information",
+				"User_name": "Benutzername",
+				"User_position": "Benutzerposition",
+				"About": "Etwa",
+				"Contact_info": "Kontaktinformation",
+				"Email": "Email",
+				"Phone_Number": "Telefonnummer",
+				"Save": "Sparen"
+			},
+            "Top_Location": "Top Location",
+            "Night_Life": "Nachtleben",
+            "Street_Shot": "Straße erschossen",
+            "Gastromomie": "Gastronomie",
+			
+			
+			"File_Upload_Dlg": {
+				"File_Upload": "Datei-Upload",
+				"Drop_File": "Drop-Datei zum Hochladen",
+				"Or": "oder",
+				"Choose_File": "Datei wählen"
+			},
+			"Photos":
+			{
+				"Photos": "Fotos",
+				"You_Can": "Sie können ein neues Bild hochladen"				
+			}
+        }
+    },
+   "Award_Right": {
+		"Award Right": "Vergeben Recht",
+		"Image": "Image",
+		"Photographer_Name": "Fotograf Namens",
+		"On_Off": "Am/Aus",
+		"On": "Am",
+		"Off": "Aus",
+		"Page_Size": "Seitengröße"
+    },
+	"Comment_Setting":{
+		"Comment_Setting": "Kommentar Setting",
+		"Comment_List": {
+			"Comment_List": "Kommentar Liste",
+			"User_Name": "Benutzername",
+			"Status": "Status",
+			"Image": "Image",
+			"Comment": "Kommentar",
+			"Date": "Datum",
+			"Action": "Action"
+		},
+		"Comment_Delete": {
+			"Msg": "Sind Sie sicher, Sie wollen diesen Benutzer löschen?",
+			"Cancel": "Absagen",
+			"Delete": "Löschen"
+		},
+		"Comment_Edit": {
+			"Photos": "Fotos",
+			"Details": "Einzelheiten",
+			"User_Name": "Benutzername",
+			"DateTime": "Terminzeit",
+			"Comment": "Kommentar"
+		},
+		"User_List":{
+			"User_List": "Prohibition Benutzerliste",
+			"Image": "Image",
+			"Name": "Name",
+			"On_Off": "Am/Aus",
+			"On": "Am",
+			"Off": "Aus"
+		}
+	},
+     "Statistic": {
+		"Statistic": "Statistik",
+		"Photo_Statistic": {
+			"Photo_Statistic": "Foto Statistic",
+			"Photos": "Fotos",
+			"Views": "Ansichten",
+			"Downloads": "Downloads",
+			"Comments": "Bemerkungen",
+			"Spline_Chart": "Spline-Diagramm",
+			"Stacked_Area_Chart": "Gestapelten Flächendiagramm",
+			"Simple_Line_Chart": "Einfache Liniendiagramm",
+			"Network_Traffic": "Netzwerktraffic"
+		},
+		"Month_1": [
+				"Jan",
+				"Feb",
+				"Mar",
+				"Apr",
+				"May",
+				"Jum",
+				"Jul",
+				"Aug",
+				"Sep",
+				"Oct",
+				"Nov",
+				"Dec"
+		],		
+		"Google_Maps": {
+			"Google_Maps": "Google Maps",
+			"Virtual_Road_Trip": "Virtuelle Road Trip",
+			"Origin": "Herkunft",
+			"Destination": "Reiseziel",
+			"Start_Driving": "losfahren",
+			"Styled_Map": "Stil Karte (neutral blau)",
+			"Styled_Map_2": "Stil Karte (subtilen Graustufen)"
+		},
+		"Vector_Maps": {
+			"Vector_Maps": "Vektor-Karten",
+			"Links_between": "Verbindungen zwischen den Städten aufgetragen",
+			"Map_with": "Karte mit einer Legende"
+		}
+    }
+}

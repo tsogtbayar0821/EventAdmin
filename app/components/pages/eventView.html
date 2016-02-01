@@ -1,0 +1,199 @@
+    <div id="top_bar" top-bar>
+        <div class="md-top-bar">
+            <div class="uk-width-large-8-10 uk-container-center">
+                <div class="uk-clearfix">
+                    <div class="md-top-bar-actions-left">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page_content">
+        <div id="page_content_inner">
+
+            <div class="md-card-list-wrapper" id="mailbox">
+                <div class="uk-width-large-8-10 uk-container-center">
+
+                    <div class="md-card-list">
+                        <div class="md-card-list-header heading_list" translate="Event.All_events.All_events"></div>
+                        <div class="md-card-list-header md-card-list-header-combined heading_list" style="display: none" translate="Event.All_events.All_events"></div>
+                        <ul class="hierarchical_slide" hierarchical-slide>
+                            <li ng-repeat="myEvent in events" on-last-repeat>
+                                <div class="md-card-list-item-menu" data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
+                                    <a href="#" class="md-icon material-icons">&#xE5D4;</a>
+                                    <div class="uk-dropdown uk-dropdown-small">
+                                        <ul class="uk-nav">
+                                            <li><a ng-click="deleteEvent(myEvent)"><i class="material-icons">&#xE872;</i> <p translate="Event.Delete"></p></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="user_heading_avatar fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail">
+                                        <img ng-src="{{myEvent.logoUrl}}" alt="user avatar"/>
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                    <div class="user_avatar_controls">
+                                            <span class="btn-file">
+                                                <span class="fileinput-new">
+                                                    <a href="#mailbox_new_image" data-uk-modal="{center:true}" ng-click="setCurEvent(myEvent)">
+                                                        <i class="material-icons">&#xE2C6;</i>
+                                                    </a>
+                                                </span>
+
+
+                                            </span>
+                                        <a href="#" class="btn-file fileinput-exists" data-dismiss="fileinput"><i class="material-icons">&#xE5CD;</i></a>
+                                    </div>
+                                </div>
+
+
+
+                                <span class="md-card-list-item-date">{{myEvent.dateTime.toString()}}</span>
+
+                                <div class="md-card-list-item-sender">
+                                    <span ></span>
+                                </div>
+                                <div class="md-card-list-item-subject">
+                                    <div class="md-card-list-item-sender-small">
+                                        <span ></span>
+                                    </div>
+                                    <span>{{myEvent.name}}</span>
+                                </div>
+                                <div class="md-card-list-item-content-wrapper">
+                                    <div class="md-input-wrapper">
+                                    </div>
+                                    <div class="md-input-wrapper">
+                                        <label translate="Event.Edit_Event.Title"></label>
+                                        <input type="text" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="myEvent.name">
+                                        <span class="md-input-bar"></span>
+                                    </div>
+                                    <div class="md-input-wrapper">
+                                        <label translate="Event.Edit_Event.Place"></label>
+                                        <input type="text" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="myEvent.placeName">
+                                        <span class="md-input-bar"></span>
+                                    </div>
+
+                                    <div class="md-input-wrapper">
+                                        <label translate="Event.Edit_Event.Date_Time"></label>
+                                    </div>
+                                    <div class="md-input-wrapper">
+                                        <input type="datetime-local" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="myEvent.dateTime">
+                                        <span class="md-input-bar"></span>
+                                    </div>
+
+
+                                    <form class="md-card-list-item-reply">
+                                        <label for="mailbox_reply_{{$index}}" translate="Event.Edit_Event.Tip"></label>
+                                         <textarea class="md-input md-input-full" id="mailbox_reply_{{$index}}" cols="30" rows="4" md-input ng-model = "myEvent.tip"></textarea>
+
+                                    </form>
+
+                                    <form class="md-card-list-item-reply">
+                                        <label for="mailbox_reply_{{$index}}" translate="Event.Edit_Event.Information"></label>
+                                         <textarea class="md-input md-input-full" id="mailbox_reply_{{$index}}" cols="30" rows="4" md-input ng-model = "myEvent.information"></textarea>
+
+                                        <button class="md-btn md-btn-flat md-btn-flat-primary" ng-click="saveEvent(myEvent)" translate="Event.Edit_Event.Save"></button>
+                                    </form>
+
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="md-fab-wrapper">
+        <a class="md-fab md-fab-accent" href="#mailbox_new_message" data-uk-modal="{center:true}">
+            <i class="material-icons">&#xE150;</i>
+        </a>
+    </div>
+    <!-- new event -->
+     <div class="uk-modal" id="mailbox_new_message">
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close uk-close" type="button"></button>
+
+ 
+            <form>
+                <div class="uk-modal-header">
+                    <h3 class="uk-modal-title" translate="Event.New_Event.Event"></h3>
+                </div>
+
+
+                <div class="md-input-wrapper">
+                    <label translate="Event.New_Event.Title"></label>
+                    <input type="text" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="newevent.name">
+                    <span class="md-input-bar"></span>
+                </div>
+                <div class="md-input-wrapper">
+                    <label translate="Event.New_Event.Place"></label>
+                    <input type="text" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="newevent.placeName">
+                    <span class="md-input-bar"></span>
+                </div>
+
+                <div class="md-input-wrapper">
+                    <label translate="Event.New_Event.Date_Time"></label>
+                </div>
+
+                <div class="md-input-wrapper">
+                    <input type="datetime-local" class="md-input label-fixed ng-pristine ng-valid ng-isolate-scope md-input-processed ng-touched" md-input="" style="" ng-model="newevent.dateTime">
+                    <span class="md-input-bar"></span>
+                </div>
+
+
+                <form class="md-card-list-item-reply">
+                    <label for="mailbox_reply_{{$index}}" translate="Event.New_Event.Tip"></label>
+                     <textarea class="md-input md-input-full" id="mailbox_reply_{{$index}}" cols="30" rows="4" md-input ng-model = "newevent.tip"></textarea>
+                </form>
+
+
+                <form class="md-card-list-item-reply">
+                    <label for="mailbox_reply_{{$index}}" translate="Event.New_Event.Information"></label>
+                     <textarea class="md-input md-input-full" id="mailbox_reply_{{$index}}" cols="30" rows="4" md-input ng-model = "newevent.information"></textarea>
+                </form>
+
+                <div id="photo_upload-drop" class="uk-file-upload">
+                    <p class="uk-text" translate="Event.New_Event.Drop_file_to_upload"></p>
+                    <p class="uk-text-muted uk-text-small uk-margin-small-bottom" translate="Event.New_Event.or"></p>
+                    <span class="uk-form-file md-btn"><p translate="Event.New_Event.Choose_File"></p><input id="photo_upload-select" type="file" ng-model="message_compose.attachments" multiple></span>
+                </div>
+                <div id="photo_upload_progressbar" class="uk-progress uk-hidden">
+                    <div class="uk-progress-bar" style="width:0">0%</div>
+                </div>
+ 
+
+                 <div class="uk-modal-footer">
+                    <button type="button" class="uk-float-right md-btn md-btn-flat md-btn-flat-primary" ng-click="addEvent()" translate="Event.New_Event.Add_New"></button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- file upload -->
+    <div class="uk-modal" id="mailbox_new_image">
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close uk-close" type="button"></button>
+            <form>
+                <div class="uk-modal-header">
+                    <h3 class="uk-modal-title" translate="Album.Edit_Album.File_Upload_Dlg.File_Upload"></h3>
+                </div>
+                <div id="mail_upload-drop" class="uk-file-upload">
+                    <p class="uk-text" translate="Album.Edit_Album.File_Upload_Dlg.Drop_File"></p>
+                    <p class="uk-text-muted uk-text-small uk-margin-small-bottom" translate="Album.Edit_Album.File_Upload_Dlg.Or"></p>
+                    <span class="uk-form-file md-btn" ><p translate="Album.Edit_Album.File_Upload_Dlg.Choose_File"></p><input id="mail_upload-select" type="file" ng-model="message_compose.attachments"></span>
+                </div>
+                <div id="mail_progressbar" class="uk-progress uk-hidden">
+                    <div class="uk-progress-bar" style="width:0">0%</div>
+                </div>
+            </form>
+        </div>
+    </div>
